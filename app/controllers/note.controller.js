@@ -2,9 +2,9 @@ const Note = require('../models/note.model.js');
 
 exports.create = (req, res) => {
   /* validate request */
-  if (!req.body.content) {
+  if (req.body.content) {
     return res.status(400).send({
-      message: 'Note content can not be empty'
+      message: 'Note content can not be empty =>'+req.body.content
     });
   }
 
